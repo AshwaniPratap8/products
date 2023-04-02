@@ -1,0 +1,7 @@
+com\amcart\products\ProductsApplication.class
+com\amcart\products\config\SecurityConfiguration.class
+com\amcart\products\entity\ProductCategory.class
+com\amcart\products\config\DataRestConfig.class
+com\amcart\products\repositories\ProductCategoryRepository.class
+com\amcart\products\repositories\ProductRepository.class
+com\amcart\products\entity\Product.class
