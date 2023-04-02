@@ -1,4 +1,4 @@
-FROM maven:3.8.6-jdk-8-alpine AS builder
+FROM maven:3.9.0-amazoncorretto-8 AS builder
 
 ADD ./pom.xml pom.xml
 ADD ./src src/
