@@ -2,38 +2,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
-  namespace: cluster-ap
+  name: products-deployment
   labels:
-    app: app-ashwanipratap
+    app: products-aps
 spec:
   template:
     metadata:
-      name: app-pod
+      name: products-pod
       labels:
-        app: app
+        app: products
         type: backend
-        pod: app-pod
+        pod: products-pod
     spec:
       containers:
-        -  name: app-container
+        -  name: products-container
            image: products
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
-      app: app
+      app: products
       type: backend
 ---
 apiVersion: v1
 kind: Service
 metadata:
  name: app-loadbalancer-service
- namespace: cluster-ap
 spec:
- type: LoadBalancer
+ type: ClusterIP
  ports:
  - targetPort: 8080
    port: 80
-   nodePort: 30082
  selector:
-  pod: app-pod
+  pod: products-pod
